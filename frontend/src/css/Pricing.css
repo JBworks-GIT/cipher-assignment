@@ -1,0 +1,87 @@
+.pricing{
+    display: flex;
+    flex-direction: column;
+    color: #000000;
+    padding-top: 12vh;
+}
+
+.pricing-up{
+    text-align: center;
+}
+
+.price{
+    margin-left: 3vh;
+}
+
+.price-sub-heading-1{
+    font-size: 2vh;   
+}
+
+.price-heading{
+    font-size: 6vh;
+    font-weight: bolder;
+}
+
+.price-sub-heading-2{
+    color: #727272;
+    font-size: 2vh;
+}
+
+.pricing-down{
+    /* display: flex;
+    justify-content: center; */
+    /* flex-direction: row; */
+    /*  */
+    /* margin: 3vh 0 3vh 16vw;*/
+    
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 9vh 0vw;
+    gap: 10vw; 
+
+}
+
+.plan-type{
+    font-size: 2vh;
+    font-weight: bold;
+}
+.plan{
+    font-size: 6vh;
+    font-weight: bold;
+}
+.month{
+    color: #727272;
+    font-size: 2vh;
+}
+
+#button a{
+    text-decoration: none;
+    background-color: #4F46E5;
+    color: #ffffff;
+    font-size: 2vh;
+    padding: 1vh 6vw;
+    border-radius: 0.5vw;
+}
+
+.price-down{
+    margin-top: 4vh;
+}
+
+.heading{
+    font-weight: bold;
+    margin: 1vh 0;
+}
+
+.tick-img{
+    height: 1.8vh;
+    width: auto;
+    margin-right: 1vh;
+}
+
+.pricing-features li{
+    margin: 1vh 0;
+    list-style: none;
+}
