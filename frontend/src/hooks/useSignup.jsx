@@ -12,7 +12,7 @@ const useSignup = () => {
       const data = await res.json();
       console.log(data);
       if (data.status === "success") {
-        alert("logged in....");
+        alert("signed in....");
     } else {
         alert(data.message);
       }
