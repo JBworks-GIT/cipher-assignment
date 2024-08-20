@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/Navbar.css';
+import { appLogout } from "../store/slices/authSlice";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
-function Navbar({ isLoggedIn, setIsLoggedIn, avatar }) {
+function Navbar() {
+    const dispatch = useDispatch();
+    const { isAuthorized} = useSelector((e) => e.auth);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isMediumScreen, setIsMediumScreen] = useState(false);
     const [isSmallScreen, setIsSmallScreen] = useState(false);
-    const navigate = useNavigate();  // Using useNavigate hook
+    const navigate = useNavigate();  
 
     useEffect(() => {
         const handleResize = () => {
@@ -20,9 +25,9 @@ function Navbar({ isLoggedIn, setIsLoggedIn, avatar }) {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+
     const handleLogout = () => {
-        setIsLoggedIn(false);
-        navigate('/login'); // Navigate to the login page after logout
+      dispatch(appLogout());
     };
 
     const toggleMenu = () => {
@@ -43,12 +48,12 @@ function Navbar({ isLoggedIn, setIsLoggedIn, avatar }) {
                 <ul className="nav-mid">
                     <li onClick={() => { toggleMenu(); navigate('/'); }}>Home</li>
                     <li onClick={() => { toggleMenu(); navigate('/createtest'); }}>Create Test</li>
-                    <li onClick={() => { toggleMenu(); navigate('/attempt-test'); }}>Attempt Test</li>
+                    <li onClick={() => { toggleMenu(); navigate('/attempttest'); }}>Attempt Test</li>
                     <li onClick={() => { toggleMenu(); navigate('/about'); }}>About</li>
                     <li onClick={() => { toggleMenu(); navigate('/contact-us'); }}>Contact Us</li>
                 </ul>
                 <ul className={`nav-right ${isSmallScreen ? 'mobile' : ''}`}>
-                    {isLoggedIn ? (
+                    {isAuthorized ? (
                         <>
                             <li>
                                 <button onClick={handleLogout}>Logout</button>
@@ -63,7 +68,7 @@ function Navbar({ isLoggedIn, setIsLoggedIn, avatar }) {
                                 <button onClick={() => { toggleMenu(); navigate('/login'); }}>Log In</button>
                             </li>
                             <li>
-                                <button onClick={() => { toggleMenu(); navigate('/register'); }} className="sign-up-btn">Sign Up Now</button>
+                                <button onClick={() => { toggleMenu(); navigate('/signup'); }} className="sign-up-btn">Sign Up Now</button>
                             </li>
                         </>
                     )}

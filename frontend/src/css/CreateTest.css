@@ -1,0 +1,64 @@
+.create-test{
+    background-color: #F1DDD9;
+    padding: 5vh 0;
+}
+
+.cc-left {
+    color: #4F46E5;
+    width: 50px;
+    height: 50px;
+}
+
+.create-test-up{
+    text-align: center;
+}
+
+.sub-heading1{
+    
+}
+
+.heading-create-test {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.create-test-down{
+    margin: 5vh 10vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two cards in one row */
+    gap: 20px;
+}
+
+.create-card{
+    display: flex;
+    background-color: #E5D2CE;
+    padding: 2vh 5vw 2vh 2vw;
+    margin: 1vh 3vw;
+    width: calc(53% - -38%); /* Adjust card width to fit two in a row with gap */
+}
+
+.cc-right{
+    margin-left: -0.1rem;
+    margin-top: -0.2rem;
+}
+
+.ccr-head a {
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: #4F46E5;
+}
+
+.ccr-explain {
+    color: rgb(79, 78, 78);
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .create-test-down {
+        grid-template-columns: repeat(1, 1fr); /* One card per row */
+    }
+    
+    .create-card {
+        width: 100%; /* Full width for single card */
+    }
+}
